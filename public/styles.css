@@ -40,7 +40,7 @@ button, input, textarea, select { font: inherit; }
 .skip-link:focus { transform: translateY(0); }
 
 .site-header {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
@@ -53,18 +53,14 @@ button, input, textarea, select { font: inherit; }
   background: rgba(247, 245, 239, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
-  transition: opacity 260ms ease, transform 260ms ease, background-color 260ms ease;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 280ms ease, transform 320ms cubic-bezier(.2,.8,.2,1);
 }
-.site-header.is-fixed {
-  position: fixed;
+.site-header.is-hidden {
   opacity: 0;
   transform: translateY(-100%);
   pointer-events: none;
-}
-.site-header.is-fixed.is-shown {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 .wordmark {
   font-weight: 600;

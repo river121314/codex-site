@@ -5,33 +5,25 @@ const header = document.querySelector(".site-header");
 if (header) {
   let lastScrollY = Math.max(window.scrollY, 0);
   let scrollFrame;
+  const directionThreshold = 4;
 
   const updateHeader = () => {
     const currentScrollY = Math.max(window.scrollY, 0);
-    const isPastHeader = currentScrollY > header.offsetHeight;
-    const isScrollingDown = currentScrollY > lastScrollY;
-    const isScrollingUp = currentScrollY < lastScrollY;
+    const scrollDelta = currentScrollY - lastScrollY;
 
-    if (!isPastHeader) {
-      header.classList.remove("is-fixed", "is-shown");
-    } else if (isScrollingDown) {
-      if (!header.classList.contains("is-fixed")) {
-        header.classList.add("is-fixed");
-        window.requestAnimationFrame(() => header.classList.add("is-shown"));
-      } else {
-        header.classList.add("is-shown");
-      }
-    } else if (isScrollingUp) {
-      header.classList.remove("is-shown");
+    if (currentScrollY <= directionThreshold) {
+      header.classList.remove("is-hidden");
+      lastScrollY = currentScrollY;
+    } else if (scrollDelta >= directionThreshold) {
+      header.classList.remove("is-hidden");
+      lastScrollY = currentScrollY;
+    } else if (scrollDelta <= -directionThreshold) {
+      header.classList.add("is-hidden");
+      lastScrollY = currentScrollY;
     }
 
-    lastScrollY = currentScrollY;
     scrollFrame = undefined;
   };
-
-  if (lastScrollY > header.offsetHeight) {
-    header.classList.add("is-fixed", "is-shown");
-  }
 
   window.addEventListener("scroll", () => {
     if (scrollFrame) return;
