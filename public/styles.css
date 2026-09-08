@@ -51,6 +51,23 @@ button, input, textarea, select { font: inherit; }
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--line);
+  transition: opacity 260ms ease, transform 260ms ease, background-color 260ms ease;
+}
+.site-header.is-fixed {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  padding-inline: max(32px, calc((100vw - var(--max)) / 2));
+  background: rgba(247, 245, 239, 0.94);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+.site-header.is-fixed.is-shown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 .wordmark {
   font-weight: 600;
@@ -273,6 +290,7 @@ button, input, textarea, select { font: inherit; }
 
 @media (max-width: 900px) {
   .site-header { width: calc(100% - 40px); }
+  .site-header.is-fixed { width: 100%; padding-inline: 20px; }
   .site-header nav { gap: 18px; }
   .site-header nav a:nth-child(2) { display: none; }
   .hero { padding-inline: 24px; grid-template-columns: 1fr; }

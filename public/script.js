@@ -1,6 +1,44 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 document.documentElement.classList.add("motion-ready");
 
+const header = document.querySelector(".site-header");
+if (header) {
+  let lastScrollY = Math.max(window.scrollY, 0);
+  let scrollFrame;
+
+  const updateHeader = () => {
+    const currentScrollY = Math.max(window.scrollY, 0);
+    const isPastHeader = currentScrollY > header.offsetHeight;
+    const isScrollingDown = currentScrollY > lastScrollY;
+    const isScrollingUp = currentScrollY < lastScrollY;
+
+    if (!isPastHeader) {
+      header.classList.remove("is-fixed", "is-shown");
+    } else if (isScrollingDown) {
+      if (!header.classList.contains("is-fixed")) {
+        header.classList.add("is-fixed");
+        window.requestAnimationFrame(() => header.classList.add("is-shown"));
+      } else {
+        header.classList.add("is-shown");
+      }
+    } else if (isScrollingUp) {
+      header.classList.remove("is-shown");
+    }
+
+    lastScrollY = currentScrollY;
+    scrollFrame = undefined;
+  };
+
+  if (lastScrollY > header.offsetHeight) {
+    header.classList.add("is-fixed", "is-shown");
+  }
+
+  window.addEventListener("scroll", () => {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(updateHeader);
+  }, { passive: true });
+}
+
 const revealItems = document.querySelectorAll(".reveal");
 if (reducedMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
