@@ -20,12 +20,35 @@
 
     <header class="site-header" aria-label="주요 탐색">
       <a class="wordmark" href="#top" aria-label="처음으로">PORTFOLIO</a>
-      <nav>
+      <nav class="desktop-nav">
         <a href="#about">ABOUT</a>
         <a href="#projects">PROJECTS</a>
         <a href="#contact">CONTACT</a>
       </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="메뉴 열기">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
     </header>
+
+    <div class="mobile-menu-shell" aria-hidden="true">
+      <button class="menu-backdrop" type="button" tabindex="-1" aria-label="메뉴 닫기"></button>
+      <aside class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="모바일 메뉴">
+        <div class="mobile-menu-head">
+          <span>MENU</span>
+          <button class="menu-close" type="button" aria-label="메뉴 닫기">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav aria-label="모바일 탐색">
+          <a href="#about"><span>ABOUT</span><small>01</small></a>
+          <a href="#projects"><span>PROJECTS</span><small>02</small></a>
+          <a href="#contact"><span>CONTACT</span><small>03</small></a>
+        </nav>
+      </aside>
+    </div>
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
