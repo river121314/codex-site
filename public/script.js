@@ -15,10 +15,10 @@ if (header) {
       header.classList.remove("is-hidden");
       lastScrollY = currentScrollY;
     } else if (scrollDelta >= directionThreshold) {
-      header.classList.remove("is-hidden");
+      header.classList.add("is-hidden");
       lastScrollY = currentScrollY;
     } else if (scrollDelta <= -directionThreshold) {
-      header.classList.add("is-hidden");
+      header.classList.remove("is-hidden");
       lastScrollY = currentScrollY;
     }
 
