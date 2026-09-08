@@ -160,11 +160,6 @@ button, input, textarea, select { font: inherit; }
   letter-spacing: 0.03em;
   text-decoration: none;
 }
-.mobile-menu nav small {
-  color: var(--blue);
-  font-size: 0.62rem;
-  font-weight: 500;
-}
 body.menu-open { overflow: hidden; }
 
 .hero {
