@@ -71,6 +71,44 @@ if (menuToggle && menuShell && menuClose && menuBackdrop) {
   });
 }
 
+const sectionIndicator = document.querySelector(".section-indicator");
+const sectionIndicatorLinks = [...document.querySelectorAll(".section-indicator a")];
+const indicatorSections = sectionIndicatorLinks
+  .map((link) => document.getElementById(link.dataset.section))
+  .filter(Boolean);
+
+if (sectionIndicatorLinks.length && indicatorSections.length) {
+  let indicatorFrame;
+
+  const updateSectionIndicator = () => {
+    const marker = window.scrollY + window.innerHeight * 0.45;
+    let activeSection = indicatorSections[0];
+
+    indicatorSections.forEach((section) => {
+      if (section.offsetTop <= marker) activeSection = section;
+    });
+
+    sectionIndicatorLinks.forEach((link) => {
+      const isActive = link.dataset.section === activeSection.id;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+    sectionIndicator.classList.toggle("is-on-dark", activeSection.id === "contact");
+
+    indicatorFrame = undefined;
+  };
+
+  const requestIndicatorUpdate = () => {
+    if (indicatorFrame) return;
+    indicatorFrame = window.requestAnimationFrame(updateSectionIndicator);
+  };
+
+  window.addEventListener("scroll", requestIndicatorUpdate, { passive: true });
+  window.addEventListener("resize", requestIndicatorUpdate);
+  updateSectionIndicator();
+}
+
 const revealItems = document.querySelectorAll(".reveal");
 if (reducedMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
