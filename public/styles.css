@@ -356,7 +356,14 @@ body.menu-open { overflow: hidden; }
 .contact-links span { margin-left: 12px; }
 .contact footer { display: flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); color: rgba(251,250,246,0.46); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; }
 
+.hero-reveal,
 .reveal { opacity: 1; transform: none; }
+.motion-ready .hero-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.8,.2,1);
+}
+.motion-ready .hero-reveal.is-visible { opacity: 1; transform: translateY(0); }
 .motion-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms ease, transform 800ms cubic-bezier(.2,.8,.2,1); }
 .motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @keyframes blink { 50% { opacity: 0; } }
