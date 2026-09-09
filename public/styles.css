@@ -322,38 +322,63 @@ body.menu-open { overflow: hidden; }
 }
 .about .section-title { font-size: 70px; line-height: 1.3; }
 .about .lead { max-width: 620px; margin: 38px 0 0; font-size: 17px; }
-.principles-diagram {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  aspect-ratio: 520 / 410;
-  justify-self: end;
-}
-.principles-diagram svg { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--blue); overflow: visible; }
-.principles-diagram svg > path { fill: none; stroke: currentColor; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
-.principle-node {
-  position: absolute;
-  width: 29.25%;
-  aspect-ratio: 1;
+.principles-cards {
   display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(32, 36, 42, 0.055);
-  color: var(--ink);
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.35;
-  text-align: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  padding: 0;
+  justify-self: end;
+  list-style: none;
 }
-.principle-experience { top: 0; left: 50%; transform: translateX(-50%); }
-.principle-feasibility { bottom: 0; left: 0; }
-.principle-operation { right: 0; bottom: 0; }
-.career { margin-top: clamp(88px, 10vw, 140px); }
-.career-summary { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; color: var(--muted); font-size: 0.78rem; }
+.principles-cards li {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  min-height: 96px;
+  padding: 18px 20px 18px 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.24);
+}
+.principle-number { color: var(--blue); font-size: 0.72rem; letter-spacing: 0.08em; }
+.principles-cards strong { font-size: 1rem; font-weight: 600; }
+.principle-icon {
+  display: grid;
+  width: 56px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(32, 36, 42, 0.16);
+  border-radius: 12px;
+  color: var(--ink);
+}
+.principle-icon .material-symbols-rounded { font-size: 26px; font-weight: 300; }
+.about-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  gap: clamp(56px, 7vw, 108px);
+  margin-top: clamp(88px, 10vw, 140px);
+  align-items: start;
+}
+.about-subtitle { margin: 0; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.career-summary { display: flex; align-items: baseline; gap: 16px; margin: 24px 0 30px; color: var(--muted); font-size: 0.78rem; }
 .career-summary .metric { color: var(--ink); font-size: 1.55rem; font-weight: 500; }
-.career ol { margin: 0; padding: 0; list-style: none; }
-.career li { display: grid; grid-template-columns: 128px 1fr 1.2fr; gap: 24px; padding: 14px 0; border-top: 1px solid var(--line); font-size: 0.84rem; }
-.career li time, .career li em { color: var(--muted); font-style: normal; }
+.career-list { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line); }
+.career-list li { padding: 18px 0; border-top: 1px solid var(--line); font-size: 0.82rem; }
+.career-heading, .career-description { display: grid; grid-template-columns: 156px minmax(0, 1fr); gap: 24px; }
+.career-heading { align-items: baseline; }
+.career-heading time { color: var(--blue); font-size: 0.75rem; letter-spacing: 0.02em; }
+.career-heading strong { font-size: 0.94rem; font-weight: 600; }
+.career-description { margin-top: 10px; color: var(--muted); line-height: 1.65; }
+.career-description em { font-style: normal; }
+.profile-details { display: grid; gap: 48px; }
+.profile-block { padding-top: 18px; border-top: 1px solid var(--line); }
+.profile-block dl { display: grid; gap: 12px; margin: 24px 0 0; }
+.profile-block dl > div { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 14px; font-size: 0.8rem; line-height: 1.65; }
+.profile-block dt { color: var(--muted); }
+.profile-block dd { margin: 0; }
+.skills dl { gap: 18px; }
 
 .projects-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 72px; }
 .projects-heading p { max-width: 340px; margin: 0 0 8px; color: var(--muted); }
@@ -458,8 +483,13 @@ body.menu-open { overflow: hidden; }
   .about-overview { gap: 64px; }
   .about .section-title { font-size: 42px; }
   .about .lead { max-width: 640px; font-size: 15px; }
-  .principles-diagram { max-width: 480px; justify-self: center; }
-  .career { margin-top: 90px; }
+  .principles-cards { max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-self: stretch; }
+  .principles-cards li { grid-template-columns: 1fr auto; min-height: 132px; }
+  .principle-number { align-self: start; }
+  .principles-cards strong { grid-column: 1 / -1; align-self: end; }
+  .principle-icon { grid-column: 2; grid-row: 1; }
+  .about-details { grid-template-columns: 1fr; margin-top: 90px; }
+  .profile-details { grid-template-columns: 1fr 1fr; gap: 40px; }
   .projects-heading { display: block; }
   .projects-heading p { margin-top: 28px; }
   .project-main, .project-main.reverse { grid-template-columns: 1fr; }
@@ -477,10 +507,14 @@ body.menu-open { overflow: hidden; }
   .desktop-only { display: none; }
   .section { width: calc(100% - 36px); padding: 98px 0; }
   .section-label { margin-bottom: 50px; }
-  .principle-node { font-size: clamp(0.78rem, 3.8vw, 0.95rem); }
+  .principles-cards { grid-template-columns: 1fr; }
+  .principles-cards li { grid-template-columns: 40px 1fr auto; min-height: 88px; padding: 15px 16px 15px 18px; }
+  .principles-cards strong { grid-column: auto; align-self: center; }
+  .principle-icon { grid-column: auto; grid-row: auto; width: 50px; }
   .career-summary { align-items: flex-start; flex-direction: column; gap: 0; }
-  .career li { grid-template-columns: 1fr 1fr; gap: 4px 16px; }
-  .career li em { grid-column: 2; }
+  .career-heading, .career-description { grid-template-columns: 1fr; gap: 4px; }
+  .career-description { margin-top: 12px; gap: 2px; }
+  .profile-details { grid-template-columns: 1fr; gap: 48px; }
   .project-card { margin-bottom: 24px; padding: 22px; }
   .project-meta { align-items: flex-start; gap: 14px; }
   .project-main { padding: 40px 0 32px; gap: 28px; }
