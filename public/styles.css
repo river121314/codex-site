@@ -161,7 +161,7 @@ body.menu-open { overflow: hidden; }
 .section-indicator {
   position: fixed;
   top: 50%;
-  right: max(12px, calc((100vw - var(--max)) / 2 - 100px));
+  right: max(12px, calc((100vw - var(--max)) / 2 - 140px));
   z-index: 30;
   display: grid;
   gap: 13px;
