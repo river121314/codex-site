@@ -87,7 +87,7 @@ if (reducedMotion) {
   window.requestAnimationFrame(() => {
     window.requestAnimationFrame(() => {
       activeHeroRevealItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 140}ms`;
+        item.style.transitionDelay = `${120 + index * 180}ms`;
         item.classList.add("is-visible");
       });
     });
