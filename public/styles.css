@@ -313,35 +313,42 @@ body.menu-open { overflow: hidden; }
 }
 .lead { color: var(--muted); font-size: clamp(1rem, 1.45vw, 1.2rem); }
 
-.section-grid { display: grid; grid-template-columns: minmax(250px, 0.75fr) 1.7fr; gap: clamp(64px, 9vw, 140px); }
-.portrait-placeholder {
-  aspect-ratio: 4 / 5;
-  min-height: 470px;
+.about > .section-label { font-size: 14px; line-height: 1.3; }
+.about-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+  gap: clamp(64px, 8vw, 120px);
+  align-items: center;
+}
+.about .section-title { font-size: 70px; line-height: 1.3; }
+.about .lead { max-width: 620px; margin: 38px 0 0; font-size: 17px; }
+.principles-diagram {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 520 / 410;
+  justify-self: end;
+}
+.principles-diagram svg { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--blue); overflow: visible; }
+.principles-diagram svg > path { fill: none; stroke: currentColor; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+.principle-node {
+  position: absolute;
+  width: 29.25%;
+  aspect-ratio: 1;
   display: grid;
   place-items: center;
-  background:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px),
-    var(--paper-deep);
-  background-size: 48px 48px;
-  border: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
+  border-radius: 50%;
+  background: rgba(32, 36, 42, 0.055);
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
   text-align: center;
 }
-.about-body .lead { max-width: 720px; margin: 38px 0 60px; }
-.principles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.principles div { min-height: 110px; padding: 24px 12px 24px 0; display: flex; flex-direction: column; justify-content: space-between; }
-.principles div + div { padding-left: 24px; border-left: 1px solid var(--line); }
-.principles span { color: var(--blue); font-size: 0.68rem; }
-.principles strong { font-size: 0.92rem; font-weight: 500; }
-.career { margin-top: 70px; }
+.principle-experience { top: 0; left: 50%; transform: translateX(-50%); }
+.principle-feasibility { bottom: 0; left: 0; }
+.principle-operation { right: 0; bottom: 0; }
+.career { margin-top: clamp(88px, 10vw, 140px); }
 .career-summary { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; color: var(--muted); font-size: 0.78rem; }
 .career-summary .metric { color: var(--ink); font-size: 1.55rem; font-weight: 500; }
 .career ol { margin: 0; padding: 0; list-style: none; }
@@ -446,8 +453,13 @@ body.menu-open { overflow: hidden; }
   .hero-description { font-size: 15px; }
   .hero::before { width: 65vw; top: 20%; right: -14%; }
   .section { width: calc(100% - 48px); }
-  .section-grid, .additional-grid { grid-template-columns: 1fr; }
-  .portrait-placeholder { max-width: 330px; min-height: 410px; }
+  .about > .section-label { font-size: 12px; line-height: 1.3; }
+  .about-overview, .additional-grid { grid-template-columns: 1fr; }
+  .about-overview { gap: 64px; }
+  .about .section-title { font-size: 42px; }
+  .about .lead { max-width: 640px; font-size: 15px; }
+  .principles-diagram { max-width: 480px; justify-self: center; }
+  .career { margin-top: 90px; }
   .projects-heading { display: block; }
   .projects-heading p { margin-top: 28px; }
   .project-main, .project-main.reverse { grid-template-columns: 1fr; }
@@ -465,10 +477,7 @@ body.menu-open { overflow: hidden; }
   .desktop-only { display: none; }
   .section { width: calc(100% - 36px); padding: 98px 0; }
   .section-label { margin-bottom: 50px; }
-  .portrait-placeholder { min-height: 360px; }
-  .principles { grid-template-columns: 1fr; }
-  .principles div { min-height: 88px; }
-  .principles div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .principle-node { font-size: clamp(0.78rem, 3.8vw, 0.95rem); }
   .career-summary { align-items: flex-start; flex-direction: column; gap: 0; }
   .career li { grid-template-columns: 1fr 1fr; gap: 4px 16px; }
   .career li em { grid-column: 2; }
