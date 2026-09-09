@@ -185,6 +185,7 @@ body.menu-open { overflow: hidden; }
   font-weight: 600;
   letter-spacing: 0.16em;
 }
+.hero .eyebrow { font-size: 14px; }
 .hero h1 {
   margin: 0;
   max-width: 980px;
@@ -363,6 +364,7 @@ body.menu-open { overflow: hidden; }
 
 @media (max-width: 900px) {
   .site-header { padding-inline: 20px; }
+  .hero .eyebrow { font-size: 12px; }
   .desktop-nav { display: none; }
   .menu-toggle { display: block; }
   .mobile-menu-shell {

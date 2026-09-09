@@ -12,7 +12,7 @@
 |---|---|---|---|
 | Hero 전체 영역 | Hero 섹션 | Hero section | 페이지 첫 화면 전체 |
 | Hero 안의 주요 문구 묶음 | Hero 콘텐츠 영역 | Hero content / Hero copy | 상단 영문 문구부터 소개 문장까지 |
-| 가장 위의 작은 영문 문구 | Hero 상단 라벨 | Eyebrow / Kicker | `SERVICE PLANNER · PORTFOLIO 2026` |
+| 가장 위의 작은 영문 문구 | Hero 상단 라벨 | Eyebrow / Kicker | `SERVICE PLANNER` |
 | 가장 큰 핵심 문장 | Hero 메인 타이틀 | Hero headline / H1 | `고객의 요구가 … 끝까지 확인합니다.` |
 | 파란색으로 강조된 문구 | Hero 강조 문구 | Accent text | `실제 서비스로 이어지도록` |
 | 글자가 순서대로 나타나는 효과 | 타이핑 효과 | Typing effect | Hero 강조 문구에 적용된 효과 |
