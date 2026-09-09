@@ -262,17 +262,24 @@ body.menu-open { overflow: hidden; }
   position: absolute;
   bottom: 38px;
   left: max(32px, calc((100vw - var(--max)) / 2));
-  display: flex;
-  gap: 14px;
-  align-items: center;
   color: var(--muted);
   font-size: 0.68rem;
   letter-spacing: 0.1em;
   text-decoration: none;
   text-transform: uppercase;
 }
-.scroll-cue i { position: relative; width: 54px; height: 1px; background: var(--line); overflow: hidden; }
-.scroll-cue i::after { content: ""; position: absolute; inset: 0; background: var(--blue); transform: translateX(-100%); animation: scan 2.2s ease-in-out infinite; }
+.scroll-cue-content {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  animation: scroll-float 2.8s ease-in-out infinite;
+}
+.scroll-cue .material-symbols-rounded {
+  color: var(--blue);
+  font-size: 19px;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+  letter-spacing: 0;
+}
 
 .section {
   width: min(calc(100% - 64px), var(--max));
@@ -407,7 +414,7 @@ body.menu-open { overflow: hidden; }
 .motion-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @keyframes hero-reveal { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes blink { 50% { opacity: 0; } }
-@keyframes scan { 45%, 55% { transform: translateX(0); } 100% { transform: translateX(100%); } }
+@keyframes scroll-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(7px); } }
 
 @media (max-width: 900px) {
   .site-header { padding-inline: 20px; }
@@ -430,6 +437,8 @@ body.menu-open { overflow: hidden; }
     transition-delay: 0s;
   }
   .hero { padding-inline: 24px; grid-template-columns: 1fr; }
+  .hero h1 { font-size: 42px; }
+  .hero-description { font-size: 15px; }
   .hero::before { width: 65vw; top: 20%; }
   .scroll-cue { left: 24px; }
   .section { width: calc(100% - 48px); }
@@ -448,7 +457,6 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 560px) {
   .site-header { height: 72px; }
   .hero { min-height: 820px; padding-top: 132px; align-items: start; }
-  .hero h1 { font-size: clamp(2.55rem, 12vw, 3.25rem); }
   .hero-description { margin-top: 34px; }
   .desktop-only { display: none; }
   .section { width: calc(100% - 36px); padding: 98px 0; }
