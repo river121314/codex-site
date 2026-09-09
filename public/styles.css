@@ -261,16 +261,21 @@ body.menu-open { overflow: hidden; }
 .scroll-cue {
   position: absolute;
   bottom: 38px;
-  left: max(32px, calc((100vw - var(--max)) / 2));
+  left: 0;
+  right: 0;
+  width: max-content;
+  margin-inline: auto;
   color: var(--muted);
   font-size: 0.68rem;
   letter-spacing: 0.1em;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
 .scroll-cue-content {
   display: flex;
-  gap: 14px;
+  flex-direction: column;
+  gap: 4px;
   align-items: center;
   animation: scroll-float 2.8s ease-in-out infinite;
 }
@@ -440,7 +445,6 @@ body.menu-open { overflow: hidden; }
   .hero h1 { font-size: 42px; }
   .hero-description { font-size: 15px; }
   .hero::before { width: 65vw; top: 20%; }
-  .scroll-cue { left: 24px; }
   .section { width: calc(100% - 48px); }
   .section-grid, .additional-grid { grid-template-columns: 1fr; }
   .portrait-placeholder { max-width: 330px; min-height: 410px; }
