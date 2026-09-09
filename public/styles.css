@@ -181,13 +181,10 @@ body.menu-open { overflow: hidden; }
   transition: color 200ms ease, font-weight 200ms ease;
 }
 .section-indicator a > span:last-child {
-  opacity: 0;
-  transform: translateX(4px);
+  opacity: 1;
+  transform: translateX(0);
   transition: opacity 180ms ease, transform 180ms ease;
 }
-.section-indicator a:hover > span:last-child,
-.section-indicator a:focus-visible > span:last-child,
-.section-indicator a.is-active > span:last-child { opacity: 1; transform: translateX(0); }
 .indicator-line {
   justify-self: end;
   width: 12px;
