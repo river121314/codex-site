@@ -222,8 +222,8 @@ body.menu-open { overflow: hidden; }
   width: min(42vw, 560px);
   aspect-ratio: 1;
   top: 14%;
-  right: -14%;
-  border: 1px solid var(--line);
+  right: calc(-14% - 100px);
+  border: 1px solid rgba(32, 36, 42, 0.08);
   border-radius: 50%;
 }
 .hero-copy { position: relative; z-index: 1; }
@@ -444,7 +444,7 @@ body.menu-open { overflow: hidden; }
   .hero { padding-inline: 24px; grid-template-columns: 1fr; }
   .hero h1 { font-size: 42px; }
   .hero-description { font-size: 15px; }
-  .hero::before { width: 65vw; top: 20%; }
+  .hero::before { width: 65vw; top: 20%; right: -14%; }
   .section { width: calc(100% - 48px); }
   .section-grid, .additional-grid { grid-template-columns: 1fr; }
   .portrait-placeholder { max-width: 330px; min-height: 410px; }
