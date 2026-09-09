@@ -238,10 +238,10 @@ body.menu-open { overflow: hidden; }
 .hero h1 {
   margin: 0;
   max-width: 980px;
-  font-size: clamp(2.9rem, 6.2vw, 6.4rem);
+  font-size: 52px;
   line-height: 1.08;
   letter-spacing: -0.055em;
-  font-weight: 500;
+  font-weight: 800;
 }
 .hero h1 .accent { color: var(--blue); }
 .cursor {
@@ -256,7 +256,7 @@ body.menu-open { overflow: hidden; }
 .hero-description {
   margin: 42px 0 0;
   color: var(--muted);
-  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  font-size: 17px;
 }
 .scroll-cue {
   position: absolute;
@@ -448,7 +448,7 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 560px) {
   .site-header { height: 72px; }
   .hero { min-height: 820px; padding-top: 132px; align-items: start; }
-  .hero h1 { font-size: clamp(2.55rem, 12vw, 3.65rem); }
+  .hero h1 { font-size: clamp(2.55rem, 12vw, 3.25rem); }
   .hero-description { margin-top: 34px; }
   .desktop-only { display: none; }
   .section { width: calc(100% - 36px); padding: 98px 0; }
