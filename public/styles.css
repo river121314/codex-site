@@ -445,6 +445,42 @@ body.menu-open { overflow: hidden; }
 .project-detail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding-top: 34px; }
 .project-detail strong { font-size: 0.76rem; font-weight: 600; }
 .project-detail p { margin: 12px 0 0; color: var(--muted); font-size: 15px; }
+.project-card[data-project="01"] .project-meta { font-size: 12px; }
+.project-card[data-project="01"] .project-type { font-size: 14px; }
+.project-card[data-project="01"] .project-copy h3 { font-size: 50px; }
+.project-card[data-project="01"] .project-detail strong { font-size: 15px; }
+.project-card[data-project="01"] summary .detail-chevron {
+  width: 8px;
+  height: 8px;
+  margin: 3px 3px 0 0;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+.project-card[data-project="01"] details[open] summary .detail-chevron {
+  transform: rotate(-135deg);
+}
+.project-site-screens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2.4vw, 30px);
+  align-items: start;
+  overflow: visible;
+  background: transparent;
+}
+.project-site-screens img {
+  aspect-ratio: 0.8;
+  border: 1px solid var(--line);
+  background: white;
+  object-fit: contain;
+}
+
+@media (min-width: 901px) {
+  .project-card[data-project="01"] .project-main {
+    grid-template-columns: minmax(400px, 0.9fr) minmax(0, 1.35fr);
+    gap: clamp(44px, 5vw, 72px);
+  }
+}
 
 .additional-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(60px, 8vw, 120px); align-items: center; }
 .additional-copy .lead { margin: 38px 0 54px; }
@@ -535,6 +571,7 @@ body.menu-open { overflow: hidden; }
   .projects .section-title { font-size: 42px; }
   .about .lead { max-width: 640px; font-size: 15px; }
   .projects-heading p { font-size: 15px; }
+  .project-card[data-project="01"] .project-copy h3 { font-size: 30px; }
   .principles-cards { max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-self: stretch; }
   .principles-cards li { grid-template-columns: 1fr auto; min-height: 132px; }
   .principle-number { align-self: start; }
@@ -579,6 +616,8 @@ body.menu-open { overflow: hidden; }
   .project-copy h3 { font-size: 2rem; }
   .project-visual { margin-inline: -22px; }
   .project-visual img { aspect-ratio: 4/3; }
+  .project-site-screens { margin-inline: 0; }
+  .project-site-screens img { aspect-ratio: 0.8; }
   .process li { grid-template-columns: 34px 60px 1fr; }
   .tool-line { justify-content: flex-start; }
   .contact { min-height: 820px; }
