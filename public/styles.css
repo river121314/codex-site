@@ -410,6 +410,12 @@ body.menu-open { overflow: hidden; }
 .profile-block dt { margin-bottom: 4px; color: var(--blue); font-size: 17px; font-weight: 700; }
 .profile-block dd { margin: 0; color: var(--muted); }
 
+@media (min-width: 1241px) {
+  .career { display: grid; height: 100%; grid-template-rows: auto minmax(0, 1fr); }
+  .career-list { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); }
+  .career-list li { display: flex; flex-direction: column; justify-content: center; }
+}
+
 .projects-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 72px; }
 .projects-heading p { max-width: 340px; margin: 0 0 8px; color: var(--muted); }
 .project-card { margin-bottom: 40px; padding: clamp(28px, 4vw, 58px); border: 1px solid var(--line); background: rgba(255,255,255,0.28); }
