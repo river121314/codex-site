@@ -376,11 +376,11 @@ body.menu-open { overflow: hidden; }
 .career-list { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line); }
 .career-list li { padding: 14px 0; border-top: 1px solid var(--line); }
 .career-heading { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: baseline; }
-.career-heading strong { font-size: 14px; font-weight: 700; }
-.career-role { color: var(--muted); font-size: 12px; }
-.career-heading time { color: var(--muted); font-size: 11px; letter-spacing: 0.01em; }
+.career-heading strong { font-size: 17px; font-weight: 700; }
+.career-role { color: var(--muted); font-size: 14px; }
+.career-heading time { color: var(--muted); font-size: 16px; letter-spacing: 0.01em; }
 .career-list li:first-child .career-heading time { color: var(--blue); font-weight: 600; }
-.career-description { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.career-description { margin: 5px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
 .profile-details { display: grid; padding-top: 50px; }
 .profile-block { height: 100%; padding-left: 34px; }
 .profile-block dl { position: relative; display: grid; gap: 20px; margin: 0; }
@@ -554,10 +554,10 @@ body.menu-open { overflow: hidden; }
   .about-details-title { margin-top: 72px; font-size: 22px; }
   .career-summary { align-items: baseline; flex-direction: row; gap: 12px; }
   .career-heading { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; }
-  .career-heading strong { grid-column: 1; grid-row: 1; }
-  .career-heading time { grid-column: 2; grid-row: 1; white-space: nowrap; text-align: right; }
-  .career-role { grid-column: 1 / -1; grid-row: 2; }
-  .career-description { margin: 8px 0 0; }
+  .career-heading strong { grid-column: 1; grid-row: 1; font-size: 14px; }
+  .career-heading time { grid-column: 2; grid-row: 1; font-size: 11px; white-space: nowrap; text-align: right; }
+  .career-role { grid-column: 1 / -1; grid-row: 2; font-size: 12px; }
+  .career-description { margin: 8px 0 0; font-size: 12px; }
   .profile-details { grid-template-columns: 1fr; }
   .profile-block { padding-left: 30px; }
   .profile-block dl::before { left: -24px; }
