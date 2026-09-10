@@ -346,8 +346,8 @@ body.menu-open { overflow: hidden; }
   transition: border-color 180ms ease;
 }
 .principles-cards li:hover { border-color: rgba(32, 36, 42, 0.62); }
-.principle-number { color: var(--blue); font-size: 0.72rem; letter-spacing: 0.08em; }
-.principles-cards strong { font-size: 1rem; font-weight: 600; }
+.principle-number { color: var(--blue); font-size: 14px; letter-spacing: 0.08em; }
+.principles-cards strong { font-size: 16px; font-weight: 600; }
 .principle-icon {
   display: grid;
   width: 56px;
@@ -384,7 +384,7 @@ body.menu-open { overflow: hidden; }
 .profile-details { display: grid; padding-top: 50px; }
 .profile-block { height: 100%; padding: 18px 18px 16px; background: rgba(255, 255, 255, 0.58); }
 .profile-block dl { display: grid; gap: 13px; margin: 0; }
-.profile-block dl > div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; font-size: 12px; line-height: 1.6; }
+.profile-block dl > div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; font-size: 14px; line-height: 1.6; }
 .profile-block dt { color: var(--ink); font-weight: 700; }
 .profile-block dd { margin: 0; }
 
