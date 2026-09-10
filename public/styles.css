@@ -379,7 +379,6 @@ body.menu-open { overflow: hidden; }
 .career-heading strong { font-size: 17px; font-weight: 700; }
 .career-role { color: var(--muted); font-size: 14px; }
 .career-heading time { color: var(--muted); font-size: 15px; letter-spacing: 0.01em; }
-.career-list li:first-child .career-heading time { color: var(--blue); font-weight: 600; }
 .career-description { margin: 5px 0 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
 .profile-details { display: grid; }
 .profile-block { --skill-rail-x: -28px; height: 100%; padding-left: 34px; }
