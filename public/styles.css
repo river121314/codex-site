@@ -545,15 +545,27 @@ body.menu-open { overflow: hidden; }
   }
 }
 
-.additional-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(60px, 8vw, 120px); align-items: center; }
-.additional-copy .lead { margin: 38px 0 54px; }
-.process { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.process li { display: grid; grid-template-columns: 44px 74px 1fr; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); }
-.process li span { color: var(--blue); font-size: 0.68rem; }
-.process li strong { font-size: 0.9rem; font-weight: 500; }
-.process li small { color: var(--muted); font-size: 0.78rem; }
-.additional-visual { margin: 0; border: 1px solid var(--line); box-shadow: 0 28px 70px rgba(32,36,42,0.08); }
-.tool-line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin-top: 90px; padding: 26px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.7rem; }
+.section.additional { padding-top: 80px; }
+.additional > .section-label { margin-bottom: 60px; font-size: 14px; line-height: 1.3; }
+.additional .section-title { font-size: 70px; font-weight: 800; line-height: 1.3; }
+.additional .section-title .accent { color: var(--blue); }
+.additional .lead { max-width: 760px; margin: 40px 0 0; font-size: 17px; }
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 72px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.artifact-card { padding: 18px; border: 1px solid var(--line); background: rgba(255,255,255,0.42); }
+.artifact-card-heading { display: grid; grid-template-columns: 32px 1fr auto; align-items: center; min-height: 42px; margin-bottom: 16px; }
+.artifact-card-heading > span:first-child { color: var(--blue); font-size: 14px; }
+.artifact-card-heading strong { font-size: 17px; font-weight: 600; }
+.artifact-icon { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 10px; font-size: 19px; }
+.artifact-card figure { margin: 0; }
+.artifact-card figure > img { width: 100%; aspect-ratio: 3 / 2; border: 1px solid var(--line); background: #eef0f3; object-fit: cover; object-position: top left; }
+.artifact-card figcaption { margin-top: 15px; color: var(--muted); font-size: 15px; line-height: 1.5; }
 
 .contact {
   min-height: 94svh;
@@ -627,14 +639,17 @@ body.menu-open { overflow: hidden; }
   .hero::before { width: 65vw; top: 20%; right: -14%; }
   .section { width: calc(100% - 48px); }
   .about > .section-label,
-  .projects > .section-label { font-size: 12px; line-height: 1.3; }
-  .about-overview, .additional-grid { grid-template-columns: 1fr; }
+  .projects > .section-label,
+  .additional > .section-label { font-size: 12px; line-height: 1.3; }
+  .about-overview { grid-template-columns: 1fr; }
   .about-overview { gap: 64px; }
   .about .section-title,
-  .projects .section-title { font-size: 42px; }
+  .projects .section-title,
+  .additional .section-title { font-size: 42px; }
   .projects-title-break { display: none; }
   .projects-title-second-line::before { content: " "; }
-  .about .lead { max-width: 640px; font-size: 15px; }
+  .about .lead,
+  .additional .lead { max-width: 640px; font-size: 15px; }
   .projects-heading p { font-size: 15px; }
   .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-copy h3 { font-size: 30px; }
   .principles-cards { max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-self: stretch; }
@@ -649,7 +664,7 @@ body.menu-open { overflow: hidden; }
   .project-main.reverse .project-copy, .project-main.reverse .project-visual { order: initial; }
   .project-visual { margin-top: 12px; }
   .project-detail { grid-template-columns: 1fr; }
-  .additional-visual { max-width: 680px; }
+  .artifact-grid { grid-template-columns: 1fr; }
   .contact { padding-inline: 24px; }
 }
 
@@ -687,8 +702,8 @@ body.menu-open { overflow: hidden; }
   .project-site-screens img { aspect-ratio: 0.8; }
   .project-simulator-screens img { aspect-ratio: auto; }
   .project-commerce-screens img { aspect-ratio: auto; }
-  .process li { grid-template-columns: 34px 60px 1fr; }
-  .tool-line { justify-content: flex-start; }
+  .artifact-grid { gap: 18px; margin-top: 48px; }
+  .artifact-card { padding: 16px; }
   .contact { min-height: 820px; }
   .contact h2 { font-size: clamp(2.45rem, 11vw, 3.65rem); }
   .contact-links { flex-direction: column; align-items: flex-start; gap: 20px; margin-top: 54px; }
