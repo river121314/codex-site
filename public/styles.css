@@ -436,7 +436,7 @@ body.menu-open { overflow: hidden; }
 .tags li { padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 0.68rem; }
 .project-visual { margin: 0; overflow: hidden; background: #ececec; }
 .project-visual img { aspect-ratio: 16/9; object-fit: cover; transition: transform 700ms cubic-bezier(.2,.8,.2,1); }
-.project-card:not([data-project="01"]):hover .project-visual img { transform: scale(1.018); }
+.project-card:not([data-project="01"]):not([data-project="02"]):hover .project-visual img { transform: scale(1.018); }
 .project-card details { border-top: 1px solid var(--line); }
 .project-card summary { padding: 22px 0 0; display: flex; justify-content: space-between; color: var(--muted); cursor: pointer; font-size: 15px; list-style: none; }
 .project-card summary::-webkit-details-marker { display: none; }
@@ -445,27 +445,32 @@ body.menu-open { overflow: hidden; }
 .project-detail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding-top: 34px; }
 .project-detail strong { font-size: 0.76rem; font-weight: 600; }
 .project-detail p { margin: 12px 0 0; color: var(--muted); font-size: 15px; }
-.project-card[data-project="01"] .project-meta { font-size: 12px; }
-.project-card[data-project="01"] .project-type { font-size: 14px; }
-.project-card[data-project="01"] .project-copy h3 { font-size: 50px; font-weight: 600; }
-.project-card[data-project="01"] .project-detail strong { font-size: 14px; }
-.project-card[data-project="01"] .project-detail p { font-size: 13px; }
-.project-card[data-project="01"] summary {
+.project-card:is([data-project="01"], [data-project="02"]) .project-meta { font-size: 12px; }
+.project-card:is([data-project="01"], [data-project="02"]) .project-type { font-size: 14px; }
+.project-card:is([data-project="01"], [data-project="02"]) .project-copy h3 { font-size: 50px; font-weight: 600; }
+.project-card:is([data-project="01"], [data-project="02"]) .project-detail strong { font-size: 14px; }
+.project-card:is([data-project="01"], [data-project="02"]) .project-detail p { font-size: 13px; }
+.project-card:is([data-project="01"], [data-project="02"]) summary {
   justify-content: flex-start;
   align-items: center;
   gap: 6px;
 }
-.project-card[data-project="01"] summary .detail-chevron {
+.project-card:is([data-project="01"], [data-project="02"]) summary .detail-chevron {
   flex: 0 0 auto;
-  width: 8px;
-  height: 8px;
-  margin: -3px 0 0;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg);
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1;
+  transform: rotate(0deg);
+  transform-origin: center;
 }
-.project-card[data-project="01"] details[open] summary .detail-chevron {
-  transform: rotate(-135deg);
+.project-card:is([data-project="01"], [data-project="02"]) details[open] summary .detail-chevron {
+  transform: rotate(180deg);
+}
+.project-card:is([data-project="01"], [data-project="02"]) .project-visual img {
+  transition: none;
+  transform: none;
 }
 .project-site-screens {
   display: grid;
@@ -479,12 +484,10 @@ body.menu-open { overflow: hidden; }
   aspect-ratio: 0.8;
   border: 1px solid var(--line);
   object-fit: cover;
-  transition: none;
-  transform: none;
 }
 
 @media (min-width: 901px) {
-  .project-card[data-project="01"] .project-main {
+  .project-card:is([data-project="01"], [data-project="02"]) .project-main {
     grid-template-columns: minmax(400px, 0.9fr) minmax(0, 1.35fr);
     gap: clamp(44px, 5vw, 72px);
   }
@@ -579,7 +582,7 @@ body.menu-open { overflow: hidden; }
   .projects .section-title { font-size: 42px; }
   .about .lead { max-width: 640px; font-size: 15px; }
   .projects-heading p { font-size: 15px; }
-  .project-card[data-project="01"] .project-copy h3 { font-size: 30px; }
+  .project-card:is([data-project="01"], [data-project="02"]) .project-copy h3 { font-size: 30px; }
   .principles-cards { max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-self: stretch; }
   .principles-cards li { grid-template-columns: 1fr auto; min-height: 132px; }
   .principle-number { align-self: start; }
