@@ -437,7 +437,6 @@ body.menu-open { overflow: hidden; }
 .tags li { padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 0.68rem; }
 .project-visual { margin: 0; overflow: hidden; background: #ececec; }
 .project-visual img { aspect-ratio: 16/9; object-fit: cover; transition: transform 700ms cubic-bezier(.2,.8,.2,1); }
-.project-card:not([data-project="01"]):not([data-project="02"]):hover .project-visual img { transform: scale(1.018); }
 .project-card details { border-top: 1px solid var(--line); }
 .project-card summary { padding: 22px 0 0; display: flex; justify-content: space-between; color: var(--muted); cursor: pointer; font-size: 15px; list-style: none; }
 .project-card summary::-webkit-details-marker { display: none; }
@@ -448,9 +447,9 @@ body.menu-open { overflow: hidden; }
 .project-detail p { margin: 12px 0 0; color: var(--muted); font-size: 15px; }
 .project-card:is([data-project="01"], [data-project="02"]) .project-meta { font-size: 12px; }
 .project-card:is([data-project="01"], [data-project="02"]) .project-type { font-size: 14px; }
-.project-card:is([data-project="01"], [data-project="02"]) .project-copy h3 { font-size: 50px; font-weight: 600; }
-.project-card:is([data-project="01"], [data-project="02"]) .project-detail strong { font-size: 14px; }
-.project-card:is([data-project="01"], [data-project="02"]) .project-detail p { font-size: 13px; }
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-copy h3 { font-size: 50px; font-weight: 600; }
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-detail strong { font-size: 14px; }
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-detail p { font-size: 13px; }
 .project-card:is([data-project="01"], [data-project="02"]) summary {
   justify-content: flex-start;
   align-items: center;
@@ -469,7 +468,7 @@ body.menu-open { overflow: hidden; }
 .project-card:is([data-project="01"], [data-project="02"]) details[open] summary .detail-chevron {
   transform: rotate(180deg);
 }
-.project-card:is([data-project="01"], [data-project="02"]) .project-visual img {
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-visual img {
   transition: none;
   transform: none;
 }
@@ -523,6 +522,7 @@ body.menu-open { overflow: hidden; }
     aspect-ratio: 1.6;
     object-fit: cover;
   }
+  .project-card[data-project="03"] .project-main { padding: 48px 0 46px; }
 }
 
 .additional-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(60px, 8vw, 120px); align-items: center; }
@@ -616,7 +616,7 @@ body.menu-open { overflow: hidden; }
   .projects-title-second-line::before { content: " "; }
   .about .lead { max-width: 640px; font-size: 15px; }
   .projects-heading p { font-size: 15px; }
-  .project-card:is([data-project="01"], [data-project="02"]) .project-copy h3 { font-size: 30px; }
+  .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-copy h3 { font-size: 30px; }
   .principles-cards { max-width: none; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-self: stretch; }
   .principles-cards li { grid-template-columns: 1fr auto; min-height: 132px; }
   .principle-number { align-self: start; }
