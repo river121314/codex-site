@@ -445,17 +445,17 @@ body.menu-open { overflow: hidden; }
 .project-detail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding-top: 34px; }
 .project-detail strong { font-size: 0.76rem; font-weight: 600; }
 .project-detail p { margin: 12px 0 0; color: var(--muted); font-size: 15px; }
-.project-card:is([data-project="01"], [data-project="02"]) .project-meta { font-size: 12px; }
-.project-card:is([data-project="01"], [data-project="02"]) .project-type { font-size: 14px; }
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-meta { font-size: 12px; }
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-type { font-size: 14px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-copy h3 { font-size: 50px; font-weight: 600; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-detail strong { font-size: 14px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-detail p { font-size: 13px; }
-.project-card:is([data-project="01"], [data-project="02"]) summary {
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) summary {
   justify-content: flex-start;
   align-items: center;
   gap: 6px;
 }
-.project-card:is([data-project="01"], [data-project="02"]) summary .detail-chevron {
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) summary .detail-chevron {
   flex: 0 0 auto;
   width: 16px;
   height: 16px;
@@ -465,7 +465,7 @@ body.menu-open { overflow: hidden; }
   transform: rotate(0deg);
   transform-origin: center;
 }
-.project-card:is([data-project="01"], [data-project="02"]) details[open] summary .detail-chevron {
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) details[open] summary .detail-chevron {
   transform: rotate(180deg);
 }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-visual img {
@@ -499,6 +499,21 @@ body.menu-open { overflow: hidden; }
   border: 1px solid var(--line);
   object-fit: contain;
 }
+.project-commerce-screens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2.4vw, 30px);
+  align-items: start;
+  overflow: visible;
+  background: transparent;
+}
+.project-commerce-screens img {
+  width: 100%;
+  aspect-ratio: 0.68;
+  border: 1px solid rgba(255,255,255,0.17);
+  background: #fff;
+  object-fit: contain;
+}
 
 @media (min-width: 901px) {
   .project-card:is([data-project="01"], [data-project="02"]) .project-main {
@@ -519,8 +534,8 @@ body.menu-open { overflow: hidden; }
   }
   .project-card[data-project="02"] .project-simulator-screens img {
     height: auto;
-    aspect-ratio: 1.6;
-    object-fit: cover;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
   .project-card[data-project="03"] .project-main { padding: 48px 0 46px; }
 }
@@ -658,6 +673,7 @@ body.menu-open { overflow: hidden; }
   .project-card { margin-bottom: 24px; padding: 22px; }
   .project-meta { align-items: flex-start; gap: 14px; }
   .project-main { padding: 40px 0 32px; gap: 28px; }
+  .project-commerce-screens { grid-template-columns: 1fr; }
   .project-copy h3 { font-size: 2rem; }
   .project-visual { margin-inline: -22px; }
   .project-visual img { aspect-ratio: 4/3; }
