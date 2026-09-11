@@ -501,7 +501,7 @@ body.menu-open { overflow: hidden; }
 }
 .project-commerce-screens {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 472.5fr) minmax(0, 616fr);
   gap: clamp(14px, 2.4vw, 30px);
   align-items: start;
   overflow: visible;
@@ -509,9 +509,10 @@ body.menu-open { overflow: hidden; }
 }
 .project-commerce-screens img {
   width: 100%;
-  aspect-ratio: 0.68;
+  height: auto;
+  aspect-ratio: auto;
   border: 1px solid rgba(255,255,255,0.17);
-  background: #fff;
+  background: transparent;
   object-fit: contain;
 }
 
@@ -681,6 +682,7 @@ body.menu-open { overflow: hidden; }
   .project-simulator-screens { margin-inline: 0; }
   .project-site-screens img { aspect-ratio: 0.8; }
   .project-simulator-screens img { aspect-ratio: auto; }
+  .project-commerce-screens img { aspect-ratio: auto; }
   .process li { grid-template-columns: 34px 60px 1fr; }
   .tool-line { justify-content: flex-start; }
   .contact { min-height: 820px; }
