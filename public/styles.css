@@ -539,6 +539,10 @@ body.menu-open { overflow: hidden; }
     object-fit: contain;
   }
   .project-card[data-project="03"] .project-main { padding: 48px 0 46px; }
+  .project-card[data-project="03"] .project-commerce-screens {
+    width: 88%;
+    justify-self: center;
+  }
 }
 
 .additional-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(60px, 8vw, 120px); align-items: center; }
