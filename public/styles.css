@@ -585,7 +585,7 @@ body.menu-open { overflow: hidden; }
   background: var(--night);
   color: var(--white);
 }
-.contact-route { display: block; width: 100%; height: auto; overflow: visible; fill: var(--night); stroke: rgba(130,168,228,0.2); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.contact-route { position: absolute; z-index: 0; top: 48px; right: -30px; display: block; width: min(52vw, 620px); height: auto; overflow: visible; fill: var(--night); stroke: rgba(130,168,228,0.11); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
 .contact-route path:first-child { fill: none; }
 .contact-route circle { fill: var(--night); }
 .contact-route .contact-route-arrow { fill: none; stroke-linecap: round; stroke-linejoin: round; }
@@ -595,8 +595,8 @@ body.menu-open { overflow: hidden; }
 .contact-main { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.55fr) 320px; align-items: center; gap: clamp(56px, 8vw, 112px); margin: 0; }
 .contact h2 { margin: 0; font-size: 56px; line-height: 1.14; letter-spacing: -0.05em; font-weight: 800; }
 .contact h2 span { color: #82a8e4; }
-.contact-action { display: flex; width: 320px; flex-direction: column; gap: 18px; align-self: center; justify-self: end; }
-.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) 38px; align-items: center; gap: 14px; width: 100%; min-height: 84px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.22); color: var(--white); background: rgba(255,255,255,0.025); text-decoration: none; transition: border-color 180ms ease, background-color 180ms ease; }
+.contact-action { display: flex; width: 320px; align-self: center; justify-self: end; }
+.contact-card { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 38px; align-items: center; gap: 14px; width: 100%; min-height: 84px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.22); color: var(--white); background: rgba(30,42,58,0.82); text-decoration: none; transition: border-color 180ms ease, background-color 180ms ease; }
 .contact-card-copy { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 8px; }
 .contact-card-label { color: #82a8e4; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 .contact-card strong { overflow-wrap: anywhere; font-size: clamp(15px, 1.3vw, 18px); font-weight: 400; letter-spacing: -0.02em; }
