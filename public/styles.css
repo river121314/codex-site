@@ -578,39 +578,32 @@ body.menu-open { overflow: hidden; }
 
 .contact {
   position: relative;
-  min-height: 700px;
-  padding: 140px max(32px, calc((100vw - var(--max)) / 2)) 38px;
+  padding: 100px max(32px, calc((100vw - var(--max)) / 2));
   display: flex;
   flex-direction: column;
   overflow: hidden;
   background: var(--night);
   color: var(--white);
 }
-.contact::before {
-  content: "@";
-  position: absolute;
-  right: max(8px, calc((100vw - var(--max)) / 2));
-  top: 42%;
-  color: rgba(130,168,228,0.045);
-  font-size: clamp(180px, 22vw, 320px);
-  font-weight: 600;
-  line-height: 0.7;
-  pointer-events: none;
-}
+.contact-route { position: absolute; z-index: 0; top: 122px; right: max(8px, calc((100vw - var(--max)) / 2)); width: min(42vw, 520px); height: auto; overflow: visible; fill: var(--night); stroke: rgba(130,168,228,0.16); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.contact-route path:first-child { fill: none; }
+.contact-route circle { fill: var(--night); }
+.contact-route .contact-route-arrow { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .contact > .section-label { margin-bottom: 60px; font-size: 14px; line-height: 1.3; }
 .section-label.light { color: rgba(251,250,246,0.55); }
 .section-label.light::after { background: rgba(255,255,255,0.18); }
-.contact-main { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(340px, 0.8fr); align-items: center; gap: clamp(48px, 7vw, 100px); margin: 0; }
-.contact h2 { margin: 0; font-size: 56px; line-height: 1.14; letter-spacing: -0.05em; font-weight: 400; }
+.contact-main { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.7fr); align-items: center; gap: clamp(48px, 7vw, 100px); margin: 0; }
+.contact h2 { margin: 0; font-size: 56px; line-height: 1.14; letter-spacing: -0.05em; font-weight: 800; }
 .contact h2 span { color: #82a8e4; }
-.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) 48px; align-items: end; gap: 24px; min-height: 168px; padding: 28px; border: 1px solid rgba(255,255,255,0.22); color: var(--white); background: rgba(255,255,255,0.025); text-decoration: none; transition: border-color 180ms ease, background-color 180ms ease; }
-.contact-card-copy { display: flex; min-width: 0; flex-direction: column; gap: 18px; }
+.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) 42px; align-items: center; justify-self: end; gap: 18px; width: 100%; max-width: 350px; min-height: 96px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.22); color: var(--white); background: rgba(255,255,255,0.025); text-decoration: none; transition: border-color 180ms ease, background-color 180ms ease; }
+.contact-card-copy { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 8px; }
 .contact-card-label { color: #82a8e4; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 .contact-card strong { overflow-wrap: anywhere; font-size: clamp(16px, 1.45vw, 20px); font-weight: 500; letter-spacing: -0.02em; }
-.contact-card-arrow { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.34); border-radius: 50%; color: #82a8e4; font-size: 20px; transition: color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.contact-card-arrow { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,0.34); border-radius: 50%; color: #82a8e4; line-height: 1; transition: color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.contact-card-arrow svg { display: block; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .contact-card:hover, .contact-card:focus-visible { border-color: rgba(130,168,228,0.78); background: rgba(130,168,228,0.06); }
 .contact-card:hover .contact-card-arrow, .contact-card:focus-visible .contact-card-arrow { color: var(--white); border-color: #82a8e4; transform: translate(3px,-3px); }
-.contact footer { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-top: 140px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); color: rgba(251,250,246,0.46); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.contact footer { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-top: 100px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); color: rgba(251,250,246,0.46); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
 
 .hero-reveal {
   opacity: 1;
@@ -695,7 +688,8 @@ body.menu-open { overflow: hidden; }
   .contact { padding-inline: 24px; }
   .contact-main { grid-template-columns: 1fr; gap: 52px; }
   .contact h2 { font-size: 48px; }
-  .contact-card { max-width: 560px; }
+  .contact-card { justify-self: start; max-width: 350px; }
+  .contact-route { top: 330px; right: -60px; width: 460px; }
 }
 
 @media (max-width: 560px) {
@@ -734,12 +728,15 @@ body.menu-open { overflow: hidden; }
   .project-commerce-screens img { aspect-ratio: auto; }
   .artifact-grid { gap: 18px; margin-top: 48px; }
   .artifact-card { padding: 16px; }
-  .contact { min-height: 0; padding-bottom: 38px; }
+  .contact { padding-top: 100px; padding-bottom: 100px; }
   .contact h2 { font-size: 38px; line-height: 1.18; }
-  .contact-card { position: relative; grid-template-columns: 1fr; min-height: 144px; padding: 22px; }
-  .contact-card-copy { gap: 15px; }
+  .contact-main { gap: 42px; }
+  .contact-card { position: relative; grid-template-columns: 1fr; min-height: 108px; padding: 18px 20px; }
+  .contact-card-copy { gap: 8px; padding-right: 50px; }
   .contact-card strong { font-size: 16px; }
-  .contact-card-arrow { position: absolute; top: 22px; right: 22px; width: 42px; height: 42px; }
+  .contact-card-arrow { position: absolute; top: 50%; right: 20px; width: 42px; height: 42px; transform: translateY(-50%); }
+  .contact-card:hover .contact-card-arrow, .contact-card:focus-visible .contact-card-arrow { transform: translate(3px,calc(-50% - 3px)); }
+  .contact-route { top: 360px; right: -145px; width: 420px; }
   .contact footer { align-items: flex-start; gap: 16px; }
 }
 
