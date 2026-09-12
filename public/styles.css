@@ -22,6 +22,14 @@ body {
   word-break: keep-all;
   -webkit-font-smoothing: antialiased;
 }
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  summary,
+  [role="button"] { cursor: url("/assets/cursor-blue.svg") 4 3, auto; }
+}
 a { color: inherit; }
 img { display: block; width: 100%; }
 button, input, textarea, select { font: inherit; }
@@ -314,7 +322,7 @@ body.menu-open { overflow: hidden; }
 .lead { color: var(--muted); font-size: clamp(1rem, 1.45vw, 1.2rem); }
 
 .section.about,
-.section.projects { padding-top: 80px; }
+.section.projects { padding-top: 140px; padding-bottom: 140px; }
 .about > .section-label,
 .projects > .section-label { margin-bottom: 60px; font-size: 14px; line-height: 1.3; }
 .about-overview {
@@ -422,6 +430,7 @@ body.menu-open { overflow: hidden; }
 .projects-heading { margin-bottom: 72px; }
 .projects-heading p { margin: 40px 0 0; color: var(--muted); font-size: 17px; }
 .project-card { margin-bottom: 40px; padding: clamp(28px, 4vw, 58px); border: 1px solid var(--line); background: rgba(255,255,255,0.28); }
+.project-card:last-child { margin-bottom: 0; }
 .project-card.dark { background: var(--night); color: var(--white); }
 .project-card.dark .project-meta, .project-card.dark .project-copy > p, .project-card.dark summary, .project-card.dark .project-detail p { color: rgba(251,250,246,0.62); }
 .project-card.dark .tags li, .project-card.dark details { border-color: rgba(255,255,255,0.17); }
@@ -503,13 +512,13 @@ body.menu-open { overflow: hidden; }
   display: grid;
   grid-template-columns: minmax(0, 472.5fr) minmax(0, 616fr);
   gap: clamp(14px, 2.4vw, 30px);
-  align-items: start;
+  align-items: stretch;
   overflow: visible;
   background: transparent;
 }
 .project-commerce-screens img {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: auto;
   border: 1px solid rgba(255,255,255,0.17);
   background: transparent;
@@ -545,7 +554,7 @@ body.menu-open { overflow: hidden; }
   }
 }
 
-.section.additional { padding-top: 80px; }
+.section.additional { padding-top: 140px; padding-bottom: 140px; }
 .additional > .section-label { margin-bottom: 60px; font-size: 14px; line-height: 1.3; }
 .additional .section-title { font-size: 70px; font-weight: 800; line-height: 1.3; }
 .additional .section-title .accent { color: var(--blue); }
@@ -568,23 +577,29 @@ body.menu-open { overflow: hidden; }
 .artifact-card figcaption { margin-top: 15px; color: var(--muted); font-size: 15px; line-height: 1.5; }
 
 .contact {
-  min-height: 94svh;
-  padding: clamp(100px, 12vw, 170px) max(32px, calc((100vw - var(--max)) / 2)) 38px;
+  position: relative;
+  padding: 100px max(32px, calc((100vw - var(--max)) / 2));
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   background: var(--night);
   color: var(--white);
 }
+.contact-route { position: absolute; z-index: 0; top: 88px; right: -30px; display: block; width: min(58vw, 700px); height: auto; overflow: visible; fill: var(--night); stroke: rgba(130,168,228,0.11); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.contact-route path:first-child { fill: none; }
+.contact-route circle { fill: var(--night); }
+.contact-route .contact-route-arrow { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.contact > .section-label { margin-bottom: 60px; font-size: 14px; line-height: 1.3; }
 .section-label.light { color: rgba(251,250,246,0.55); }
 .section-label.light::after { background: rgba(255,255,255,0.18); }
-.contact-main { margin: auto 0; }
-.contact h2 { margin: 0; font-size: clamp(2.6rem, 6vw, 6.5rem); line-height: 1.1; letter-spacing: -0.05em; font-weight: 400; }
+.contact-main { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.55fr) 320px; align-items: center; gap: clamp(56px, 8vw, 112px); margin: 0; }
+.contact-copy { grid-column: 1; min-width: 0; }
+.contact h2 { margin: 0; font-size: 56px; line-height: 1.14; letter-spacing: -0.05em; font-weight: 800; }
 .contact h2 span { color: #82a8e4; }
-.contact-links { display: flex; gap: 42px; margin-top: 70px; }
-.contact-links a { padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.35); font-size: 0.86rem; text-decoration: none; transition: color 180ms, border-color 180ms; }
-.contact-links a:hover, .contact-links a:focus-visible { color: #82a8e4; border-color: #82a8e4; }
-.contact-links span { margin-left: 12px; }
-.contact footer { display: flex; justify-content: space-between; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); color: rgba(251,250,246,0.46); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.contact-email-link { position: absolute; top: 0; left: 0; display: inline-flex; align-items: center; gap: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.35); color: var(--white); font-size: 15px; font-weight: 400; letter-spacing: -0.01em; text-decoration: none; text-transform: none; transform: translateY(-100%); transition: color 180ms ease, border-color 180ms ease; }
+.contact-email-link:hover, .contact-email-link:focus-visible { color: #82a8e4; border-color: #82a8e4; }
+.contact-email-link span { font-size: 16px; line-height: 1; }
+.contact footer { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-top: 100px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); color: rgba(251,250,246,0.46); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
 
 .hero-reveal {
   opacity: 1;
@@ -640,7 +655,8 @@ body.menu-open { overflow: hidden; }
   .section { width: calc(100% - 48px); }
   .about > .section-label,
   .projects > .section-label,
-  .additional > .section-label { font-size: 12px; line-height: 1.3; }
+  .additional > .section-label,
+  .contact > .section-label { font-size: 12px; line-height: 1.3; }
   .about-overview { grid-template-columns: 1fr; }
   .about-overview { gap: 64px; }
   .about .section-title,
@@ -666,6 +682,9 @@ body.menu-open { overflow: hidden; }
   .project-detail { grid-template-columns: 1fr; }
   .artifact-grid { grid-template-columns: 1fr; }
   .contact { padding-inline: 24px; }
+  .contact-main { grid-template-columns: 1fr; gap: 42px; }
+  .contact h2 { font-size: 48px; }
+  .contact-route { display: none; }
 }
 
 @media (max-width: 560px) {
@@ -701,13 +720,13 @@ body.menu-open { overflow: hidden; }
   .project-simulator-screens { margin-inline: 0; }
   .project-site-screens img { aspect-ratio: 0.8; }
   .project-simulator-screens img { aspect-ratio: auto; }
-  .project-commerce-screens img { aspect-ratio: auto; }
+  .project-commerce-screens img { height: auto; aspect-ratio: auto; }
   .artifact-grid { gap: 18px; margin-top: 48px; }
   .artifact-card { padding: 16px; }
-  .contact { min-height: 820px; }
-  .contact h2 { font-size: clamp(2.45rem, 11vw, 3.65rem); }
-  .contact-links { flex-direction: column; align-items: flex-start; gap: 20px; margin-top: 54px; }
-  .contact footer { gap: 16px; }
+  .contact { padding-top: 100px; padding-bottom: 100px; }
+  .contact h2 { font-size: 38px; line-height: 1.18; }
+  .contact-email-link { font-size: 14px; }
+  .contact footer { align-items: flex-start; gap: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
