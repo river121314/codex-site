@@ -322,7 +322,7 @@ body.menu-open { overflow: hidden; }
 .lead { color: var(--muted); font-size: clamp(1rem, 1.45vw, 1.2rem); }
 
 .section.about,
-.section.projects { padding-top: 140px; }
+.section.projects { padding-top: 140px; padding-bottom: 140px; }
 .about > .section-label,
 .projects > .section-label { margin-bottom: 60px; font-size: 14px; line-height: 1.3; }
 .about-overview {
@@ -430,6 +430,7 @@ body.menu-open { overflow: hidden; }
 .projects-heading { margin-bottom: 72px; }
 .projects-heading p { margin: 40px 0 0; color: var(--muted); font-size: 17px; }
 .project-card { margin-bottom: 40px; padding: clamp(28px, 4vw, 58px); border: 1px solid var(--line); background: rgba(255,255,255,0.28); }
+.project-card:last-child { margin-bottom: 0; }
 .project-card.dark { background: var(--night); color: var(--white); }
 .project-card.dark .project-meta, .project-card.dark .project-copy > p, .project-card.dark summary, .project-card.dark .project-detail p { color: rgba(251,250,246,0.62); }
 .project-card.dark .tags li, .project-card.dark details { border-color: rgba(255,255,255,0.17); }
@@ -553,7 +554,7 @@ body.menu-open { overflow: hidden; }
   }
 }
 
-.section.additional { padding-top: 140px; }
+.section.additional { padding-top: 140px; padding-bottom: 140px; }
 .additional > .section-label { margin-bottom: 60px; font-size: 14px; line-height: 1.3; }
 .additional .section-title { font-size: 70px; font-weight: 800; line-height: 1.3; }
 .additional .section-title .accent { color: var(--blue); }
@@ -587,12 +588,13 @@ body.menu-open { overflow: hidden; }
 .section-label.light { color: rgba(251,250,246,0.55); }
 .section-label.light::after { background: rgba(255,255,255,0.18); }
 .contact-main { margin: 0; }
-.contact h2 { margin: 0; font-size: clamp(42px, 4vw, 54px); line-height: 1.3; letter-spacing: -0.045em; font-weight: 600; }
+.contact h2 { margin: 0; font-size: clamp(2.6rem, 6vw, 6.5rem); line-height: 1.1; letter-spacing: -0.05em; font-weight: 400; }
 .contact h2 span { color: #82a8e4; }
+.contact-links { display: flex; gap: 42px; margin-top: 70px; }
+.contact-links a { padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.35); font-size: 0.86rem; text-decoration: none; transition: color 180ms, border-color 180ms; }
+.contact-links a:hover, .contact-links a:focus-visible { color: #82a8e4; border-color: #82a8e4; }
+.contact-links span { margin-left: 12px; }
 .contact footer { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-top: 140px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); color: rgba(251,250,246,0.46); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
-.contact-email { color: var(--white); padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.35); font-size: 15px; letter-spacing: 0; text-transform: none; text-decoration: none; transition: color 180ms, border-color 180ms; }
-.contact-email:hover, .contact-email:focus-visible { color: #82a8e4; border-color: #82a8e4; }
-.contact-email span { margin-left: 12px; }
 
 .hero-reveal {
   opacity: 1;
@@ -714,7 +716,7 @@ body.menu-open { overflow: hidden; }
   .artifact-grid { gap: 18px; margin-top: 48px; }
   .artifact-card { padding: 16px; }
   .contact { min-height: 820px; }
-  .contact h2 { font-size: 42px; }
+  .contact h2 { font-size: clamp(2.45rem, 11vw, 3.65rem); }
   .contact footer { align-items: flex-start; gap: 16px; }
 }
 
