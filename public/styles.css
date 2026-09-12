@@ -585,17 +585,17 @@ body.menu-open { overflow: hidden; }
   background: var(--night);
   color: var(--white);
 }
-.contact-route { position: absolute; z-index: 0; top: 122px; right: max(8px, calc((100vw - var(--max)) / 2)); width: min(42vw, 520px); height: auto; overflow: visible; fill: var(--night); stroke: rgba(130,168,228,0.16); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.contact-route { position: absolute; z-index: 0; top: 220px; right: max(24px, calc((100vw - var(--max)) / 2)); width: min(38vw, 470px); height: auto; overflow: visible; fill: var(--night); stroke: rgba(130,168,228,0.2); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
 .contact-route path:first-child { fill: none; }
 .contact-route circle { fill: var(--night); }
 .contact-route .contact-route-arrow { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .contact > .section-label { margin-bottom: 60px; font-size: 14px; line-height: 1.3; }
 .section-label.light { color: rgba(251,250,246,0.55); }
 .section-label.light::after { background: rgba(255,255,255,0.18); }
-.contact-main { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.7fr); align-items: center; gap: clamp(48px, 7vw, 100px); margin: 0; }
+.contact-main { position: relative; z-index: 1; margin: 0; }
 .contact h2 { margin: 0; font-size: 56px; line-height: 1.14; letter-spacing: -0.05em; font-weight: 800; }
 .contact h2 span { color: #82a8e4; }
-.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) 42px; align-items: center; justify-self: end; gap: 18px; width: 100%; max-width: 350px; min-height: 96px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.22); color: var(--white); background: rgba(255,255,255,0.025); text-decoration: none; transition: border-color 180ms ease, background-color 180ms ease; }
+.contact-card { display: grid; grid-template-columns: minmax(0, 1fr) 42px; align-items: center; gap: 18px; width: 100%; max-width: 350px; min-height: 96px; margin-top: 48px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.22); color: var(--white); background: rgba(255,255,255,0.025); text-decoration: none; transition: border-color 180ms ease, background-color 180ms ease; }
 .contact-card-copy { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 8px; }
 .contact-card-label { color: #82a8e4; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 .contact-card strong { overflow-wrap: anywhere; font-size: clamp(16px, 1.45vw, 20px); font-weight: 500; letter-spacing: -0.02em; }
@@ -686,10 +686,9 @@ body.menu-open { overflow: hidden; }
   .project-detail { grid-template-columns: 1fr; }
   .artifact-grid { grid-template-columns: 1fr; }
   .contact { padding-inline: 24px; }
-  .contact-main { grid-template-columns: 1fr; gap: 52px; }
   .contact h2 { font-size: 48px; }
-  .contact-card { justify-self: start; max-width: 350px; }
-  .contact-route { top: 330px; right: -60px; width: 460px; }
+  .contact-card { max-width: 350px; }
+  .contact-route { top: 280px; right: -80px; width: 440px; }
 }
 
 @media (max-width: 560px) {
@@ -730,13 +729,12 @@ body.menu-open { overflow: hidden; }
   .artifact-card { padding: 16px; }
   .contact { padding-top: 100px; padding-bottom: 100px; }
   .contact h2 { font-size: 38px; line-height: 1.18; }
-  .contact-main { gap: 42px; }
-  .contact-card { position: relative; grid-template-columns: 1fr; min-height: 108px; padding: 18px 20px; }
+  .contact-card { position: relative; grid-template-columns: 1fr; min-height: 108px; margin-top: 42px; padding: 18px 20px; }
   .contact-card-copy { gap: 8px; padding-right: 50px; }
   .contact-card strong { font-size: 16px; }
   .contact-card-arrow { position: absolute; top: 50%; right: 20px; width: 42px; height: 42px; transform: translateY(-50%); }
   .contact-card:hover .contact-card-arrow, .contact-card:focus-visible .contact-card-arrow { transform: translate(3px,calc(-50% - 3px)); }
-  .contact-route { top: 360px; right: -145px; width: 420px; }
+  .contact-route { display: none; }
   .contact footer { align-items: flex-start; gap: 16px; }
 }
 
