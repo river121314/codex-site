@@ -593,17 +593,12 @@ body.menu-open { overflow: hidden; }
 .section-label.light { color: rgba(251,250,246,0.55); }
 .section-label.light::after { background: rgba(255,255,255,0.18); }
 .contact-main { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.55fr) 320px; align-items: center; gap: clamp(56px, 8vw, 112px); margin: 0; }
+.contact-copy { grid-column: 1; min-width: 0; }
 .contact h2 { margin: 0; font-size: 56px; line-height: 1.14; letter-spacing: -0.05em; font-weight: 800; }
 .contact h2 span { color: #82a8e4; }
-.contact-action { display: flex; width: 320px; align-self: center; justify-self: end; }
-.contact-card { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 38px; align-items: center; gap: 14px; width: 100%; min-height: 84px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.22); color: var(--white); background: rgba(30,42,58,0.82); text-decoration: none; transition: border-color 180ms ease; }
-.contact-card-copy { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 8px; }
-.contact-card-label { color: #82a8e4; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
-.contact-card strong { overflow-wrap: anywhere; font-size: clamp(15px, 1.3vw, 18px); font-weight: 400; letter-spacing: -0.02em; }
-.contact-card-arrow { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.34); border-radius: 50%; color: #82a8e4; line-height: 1; transition: color 180ms ease, border-color 180ms ease, transform 180ms ease; }
-.contact-card-arrow svg { display: block; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.contact-card:hover, .contact-card:focus-visible { border-color: rgba(130,168,228,0.78); }
-.contact-card:hover .contact-card-arrow, .contact-card:focus-visible .contact-card-arrow { color: var(--white); border-color: #82a8e4; transform: translate(3px,-3px); }
+.contact-email-link { display: inline-flex; align-items: center; gap: 12px; margin-top: 48px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.35); color: var(--white); font-size: 15px; font-weight: 400; letter-spacing: -0.01em; text-decoration: none; transition: color 180ms ease, border-color 180ms ease; }
+.contact-email-link:hover, .contact-email-link:focus-visible { color: #82a8e4; border-color: #82a8e4; }
+.contact-email-link span { font-size: 16px; line-height: 1; }
 .contact footer { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-top: 100px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.14); color: rgba(251,250,246,0.46); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
 
 .hero-reveal {
@@ -689,7 +684,6 @@ body.menu-open { overflow: hidden; }
   .contact { padding-inline: 24px; }
   .contact-main { grid-template-columns: 1fr; gap: 42px; }
   .contact h2 { font-size: 48px; }
-  .contact-action { width: 320px; justify-self: start; }
   .contact-route { display: none; }
 }
 
@@ -731,11 +725,7 @@ body.menu-open { overflow: hidden; }
   .artifact-card { padding: 16px; }
   .contact { padding-top: 100px; padding-bottom: 100px; }
   .contact h2 { font-size: 38px; line-height: 1.18; }
-  .contact-card { position: relative; grid-template-columns: 1fr; min-height: 96px; padding: 16px 18px; }
-  .contact-card-copy { gap: 8px; padding-right: 50px; }
-  .contact-card strong { font-size: 15px; }
-  .contact-card-arrow { position: absolute; top: 50%; right: 18px; width: 38px; height: 38px; transform: translateY(-50%); }
-  .contact-card:hover .contact-card-arrow, .contact-card:focus-visible .contact-card-arrow { transform: translate(3px,calc(-50% - 3px)); }
+  .contact-email-link { margin-top: 40px; font-size: 14px; }
   .contact footer { align-items: flex-start; gap: 16px; }
 }
 
