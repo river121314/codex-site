@@ -512,13 +512,13 @@ body.menu-open { overflow: hidden; }
   display: grid;
   grid-template-columns: minmax(0, 472.5fr) minmax(0, 616fr);
   gap: clamp(14px, 2.4vw, 30px);
-  align-items: start;
+  align-items: stretch;
   overflow: visible;
   background: transparent;
 }
 .project-commerce-screens img {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: auto;
   border: 1px solid rgba(255,255,255,0.17);
   background: transparent;
@@ -720,7 +720,7 @@ body.menu-open { overflow: hidden; }
   .project-simulator-screens { margin-inline: 0; }
   .project-site-screens img { aspect-ratio: 0.8; }
   .project-simulator-screens img { aspect-ratio: auto; }
-  .project-commerce-screens img { aspect-ratio: auto; }
+  .project-commerce-screens img { height: auto; aspect-ratio: auto; }
   .artifact-grid { gap: 18px; margin-top: 48px; }
   .artifact-card { padding: 16px; }
   .contact { padding-top: 100px; padding-bottom: 100px; }
