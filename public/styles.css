@@ -266,6 +266,10 @@ body.menu-open { overflow: hidden; }
   color: var(--muted);
   font-size: 17px;
 }
+.hero-name {
+  color: var(--blue);
+  font-weight: 700;
+}
 .scroll-cue {
   position: absolute;
   bottom: 38px;
