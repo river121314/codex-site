@@ -518,14 +518,15 @@ body.menu-open { overflow: hidden; }
   margin-top: 22px;
   padding-top: 18px;
   display: grid;
-  grid-template-columns: minmax(210px, 1fr) auto auto;
+  grid-template-columns: auto auto auto;
   align-items: center;
+  justify-content: center;
   gap: 18px 28px;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 12px;
 }
-.project-stat-title { letter-spacing: -0.01em; }
+.project-stat-title { color: var(--ink); font-size: 13px; font-weight: 600; letter-spacing: -0.01em; }
 .project-stat-metric {
   display: flex;
   align-items: baseline;
@@ -594,6 +595,7 @@ body.menu-open { overflow: hidden; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-type { font-size: 14px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-copy h3 { font-size: 50px; font-weight: 600; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-detail strong { font-size: 14px; }
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-stat strong { font-size: 22px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-detail p { font-size: 13px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) summary {
   justify-content: flex-start;
@@ -826,7 +828,7 @@ body.menu-open { overflow: hidden; }
     line-height: 20px;
     transform: translateX(-50%) rotate(90deg);
   }
-  .project-stat { grid-template-columns: 1fr; align-items: start; gap: 12px; }
+  .project-stat { grid-template-columns: 1fr; align-items: start; justify-content: stretch; gap: 12px; }
   .project-stat-note { justify-self: start; }
   .artifact-grid { grid-template-columns: 1fr; }
   .contact { padding-inline: 24px; }
