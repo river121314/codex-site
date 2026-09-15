@@ -558,10 +558,10 @@ body.menu-open { overflow: hidden; }
 .project-scope-group {
   min-height: 132px;
   padding: 20px;
-  border: 1px solid rgba(255,255,255,0.17);
-  background: rgba(255,255,255,0.035);
+  border: 0;
+  background: rgba(255,255,255,0.06);
 }
-.project-scope-group.is-redesigned { border-color: rgba(130,168,228,0.52); background: rgba(53,109,197,0.14); }
+.project-scope-group.is-redesigned { background: rgba(53,109,197,0.18); }
 .project-scope-label {
   display: flex;
   align-items: center;
@@ -588,11 +588,12 @@ body.menu-open { overflow: hidden; }
 }
 .project-scope-group li {
   padding: 7px 10px;
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 0;
+  background: rgba(255,255,255,0.09);
   color: rgba(251,250,246,0.72);
   font-size: 13px;
 }
-.is-redesigned li { border-color: rgba(130,168,228,0.26); color: rgba(251,250,246,0.88); }
+.is-redesigned li { background: rgba(130,168,228,0.18); color: rgba(251,250,246,0.88); }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-meta { font-size: 12px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-type { font-size: 14px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-copy h3 { font-size: 50px; font-weight: 600; }
