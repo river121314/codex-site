@@ -849,6 +849,7 @@ body.menu-open { overflow: hidden; }
   .section-label { margin-bottom: 50px; }
   .principles-cards { grid-template-columns: 1fr; }
   .principles-cards li { grid-template-columns: 40px 1fr auto; min-height: 88px; padding: 15px 16px 15px 18px; }
+  .principle-number { align-self: center; }
   .principles-cards strong { grid-column: auto; align-self: center; }
   .principle-icon { grid-column: auto; grid-row: auto; width: 50px; }
   .about-details-title { margin-top: 72px; font-size: 22px; }
