@@ -525,11 +525,13 @@ body.menu-open { overflow: hidden; }
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 12px;
+  text-align: center;
 }
 .project-stat-title { color: var(--ink); font-size: 13px; font-weight: 600; letter-spacing: -0.01em; }
 .project-stat-metric {
   display: flex;
   align-items: baseline;
+  justify-content: center;
   gap: 9px;
   white-space: nowrap;
 }
@@ -542,7 +544,7 @@ body.menu-open { overflow: hidden; }
 }
 .project-stat-before { color: var(--muted); font-size: 14px; }
 .project-stat-arrow { color: rgba(53,109,197,0.52); font-size: 13px; }
-.project-stat strong { color: var(--blue); font-size: 22px; font-weight: 700; line-height: 1; }
+.project-stat strong { color: var(--blue); font-size: 14px; font-weight: 700; line-height: 1; }
 .project-stat-note { justify-self: end; font-size: 11px; }
 .project-card.dark .project-evidence { border-color: rgba(255,255,255,0.17); background: rgba(255,255,255,0.04); }
 .project-card.dark .project-flow li { border-color: rgba(255,255,255,0.17); background: rgba(255,255,255,0.045); color: var(--white); }
@@ -595,7 +597,7 @@ body.menu-open { overflow: hidden; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-type { font-size: 14px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-copy h3 { font-size: 50px; font-weight: 600; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-detail strong { font-size: 14px; }
-.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-stat strong { font-size: 22px; }
+.project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-stat strong { font-size: 14px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) .project-detail p { font-size: 13px; }
 .project-card:is([data-project="01"], [data-project="02"], [data-project="03"]) summary {
   justify-content: flex-start;
@@ -828,8 +830,8 @@ body.menu-open { overflow: hidden; }
     line-height: 20px;
     transform: translateX(-50%) rotate(90deg);
   }
-  .project-stat { grid-template-columns: 1fr; align-items: start; justify-content: stretch; gap: 12px; }
-  .project-stat-note { justify-self: start; }
+  .project-stat { grid-template-columns: 1fr; align-items: center; justify-content: stretch; gap: 12px; }
+  .project-stat-note { justify-self: center; }
   .artifact-grid { grid-template-columns: 1fr; }
   .contact { padding-inline: 24px; }
   .contact-main { grid-template-columns: 1fr; gap: 42px; }
