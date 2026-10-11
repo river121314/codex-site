@@ -109,6 +109,46 @@ if (sectionIndicatorLinks.length && indicatorSections.length) {
   updateSectionIndicator();
 }
 
+const analyticsSectionNames = {
+  top: "HERO",
+  about: "ABOUT",
+  projects: "PROJECTS",
+  additional: "ADDITIONAL",
+  contact: "CONTACT"
+};
+
+const trackEvent = (name, params) => {
+  if (typeof window.gtag === "function") window.gtag("event", name, params);
+};
+
+sectionIndicatorLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const sectionName = analyticsSectionNames[link.dataset.section];
+    if (sectionName) trackEvent("section_select", { section_name: sectionName });
+  });
+});
+
+if ("IntersectionObserver" in window) {
+  const viewedSections = new Set();
+  const viewObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const sectionName = analyticsSectionNames[entry.target.id];
+        if (!sectionName || viewedSections.has(sectionName)) return;
+        // 섹션 높이의 절반, 또는 섹션이 화면보다 클 때는 화면 높이의 절반 이상 보일 때
+        const visibleHeight = entry.intersectionRect.height;
+        const requiredHeight = Math.min(entry.boundingClientRect.height, entry.rootBounds.height) * 0.5;
+        if (visibleHeight < requiredHeight - 1) return;
+        viewedSections.add(sectionName);
+        viewObserver.unobserve(entry.target);
+        trackEvent("section_view", { section_name: sectionName });
+      });
+    },
+    { threshold: Array.from({ length: 101 }, (_, index) => index / 100) }
+  );
+  indicatorSections.forEach((section) => viewObserver.observe(section));
+}
+
 const revealItems = document.querySelectorAll(".reveal");
 if (reducedMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
